@@ -28,19 +28,19 @@ int main(){
             s = s+1;                
         }
         for(int o=0 ; o < m ;o++){
-            printf("%d",o);
+            printf("%d -> ",o);
             for(int j=0;j<=c;j++){
                 if(array[o][j] != 0){
-                    printf(" -> %d",array[o][j]);
+                    printf("%d -> ",array[o][j]);
                 }
                 else{
-                    printf(" \\\n");
+                    printf("\\\n");
                     break;
                 }
             
             }
         }
-        if(i<=1){
+        if(i!=n-1){
             printf("\n");
         }
         
