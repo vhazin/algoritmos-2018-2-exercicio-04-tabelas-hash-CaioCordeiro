@@ -1,35 +1,37 @@
 #include <stdio.h>
 #include <math.h>
 #include <malloc.h>
- long int n,m,c,x,h;
- long int i = 0;
- long int s = 0;
- long int* aux1= 0;
- long int aux2 =0;
+ int n,m,c,x,h;
+ int i = 0;
+ int s = 0;
+
 
 int main(){
-    scanf("%ld",&n);
-    while(i <= n){ 
-        scanf("%ld %ld",&m,&c);
-        long int array[m][c];
+    scanf("%d",&n);
+    while(i < n){ 
+        scanf("%d %d",&m,&c);
+        int array[m][c];
         for(int k=0;k<m;k++){
             for(int l=0;l<c;l++){
                 array[k][l]=0;
             }
         }
-        while(s <= c){
-            scanf("%ld ",&x);
+        while(s < c){
+            scanf("%d",&x);
             h =((x)%m); 
-            array[h][s] = x;
-            s = s+1;
-                
+            for(int g = 0;g <c;g++){
+                if(array[h][g]== 0){
+                    array[h][g] = x;
+                    break;
+                }
+            }
+            s = s+1;                
         }
-        printf("\n");
-        for(long int o=0 ; o <= m ;o++){
-            printf("%ld",o);
-            for(long int j=0;j<=c;j++){
+        for(int o=0 ; o < m ;o++){
+            printf("%d",o);
+            for(int j=0;j<=c;j++){
                 if(array[o][j] != 0){
-                    printf(" -> %ld",array[o][j]);
+                    printf(" -> %d",array[o][j]);
                 }
                 else{
                     printf(" \\\n");
@@ -38,20 +40,12 @@ int main(){
             
             }
         }
-        if(i>=1)
+        if(i<=1){
             printf("\n");
+        }
         
         s = 0;
         i = i+1;
     }
-    i=0;
     return 0;
 }
-
-
-
-
-
-
-
-
